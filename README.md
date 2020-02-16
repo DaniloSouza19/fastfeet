@@ -30,5 +30,6 @@
 ## Como executar
 <p>Acessar a pasta do backend:</p>
  <p><strong> cd backend</strong></p>
+ <p>Crie um .env e preencha de acordo com o .env.example</p>
 <p><strong>yarn</strong></p>
 <p><strong>yarn dev</strong></p>
