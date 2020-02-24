@@ -4,9 +4,12 @@ import File from '../models/File';
 
 class DeliveryguyController {
   async index(req, res) {
+    const { page } = req.query;
     const deliveryguys = await Deliveryguy.findAll({
       attributes: ['id', 'name', 'email'],
       order: ['id'],
+      limit: 20,
+      offset: (page - 1) * 20,
       include: [
         {
           model: File,
@@ -30,7 +33,7 @@ class DeliveryguyController {
     /**
      * Check req.body is valid
      */
-    if (!schema.isValid(req.body)) {
+    if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
@@ -66,7 +69,7 @@ class DeliveryguyController {
     /**
      * Check req.body is valid
      */
-    if (!schema.isValid(req.body)) {
+    if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validation fails' });
     }
 
@@ -113,7 +116,7 @@ class DeliveryguyController {
 
     await deliveryguy.destroy();
 
-    return res.status(200).json();
+    return res.status(200).json({ msg: 'Deleted sucessfull' });
   }
 }
 
