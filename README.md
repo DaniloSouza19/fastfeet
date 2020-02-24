@@ -3,11 +3,11 @@
 </h1>
 
 <h3 align="center">
-  Desafio 2: FastFeet, o início
+  Desafio 2: FastFeet, Backend
 </h3>
 
 <h3 align="center">
-  Etapa 1/4 do Desafio Final
+  Etapa 1/4 do Desafio Final | Concluído.
 </h3>
 
 <p align="center">
